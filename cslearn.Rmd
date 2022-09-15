@@ -1,0 +1,57 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+plot(cars)
+```
+```{r}
+
+```
+packages
+```{r}
+library(haven)
+library(ggplot2)
+library(dplyr)
+library(gt)
+```
+import
+
+import adae
+```{r}
+
+adae <- read_sas("https://github.com/elong0527/r4csr/raw/master/data-adam/adae.sas7bdat", 
+    NULL)
+
+adsl <- read_sas("https://github.com/elong0527/r4csr/raw/master/data-adam/adsl.sas7bdat", 
+    NULL)
+
+
+ 
+```
+
+ae visualization
+```{r}
+adae %>%
+filter(!(AEREL %in% "")) %>%
+ggplot() +
+aes(x = AESEV, fill = TRTA) +
+geom_bar() +
+scale_fill_hue(direction = 1)+
+theme_minimal()
+```
+
+
+Prep.Data
+```{r}
+```
+
+viz
+```{r}
+
+```
+table
+```{r}
+
+```
